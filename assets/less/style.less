@@ -1,1 +1,207 @@
-@import url(./resets.less);@import url(./mixins.less);
+@import url(./resets.less);
+@import url(./mixins.less);
+
+
+html {
+    body {
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: @bodyFont;
+            font-size: @bodyFontSize;
+            background-color: @cream;
+
+            .balance {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: @softRed;
+                color: @white;
+                border-radius: 1.5em;
+                max-width: @maxWidth;
+                height: 125px;
+                width: 90%;
+                margin-bottom: 15px;
+                padding: @mobPadLR;
+
+                @media only screen and (min-width: @mobileMQ) {
+
+                    padding: @desktopPadLR;
+                }
+
+                p {
+                    padding-top: .25em;
+                    font-weight: 700;
+                    font-size: 1.6em;
+                }
+            }
+
+            .graph {
+                height: 178px;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 18px;
+                justify-content: center;
+                align-items: end;
+                margin: 0 @mobPadLR;
+
+                .day {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    align-items: center;
+                    height: 100%;
+
+                    .bar {
+                        width: 100%;
+
+                        height: 100%;
+                        // overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+
+                        .bar-filled {
+                            position: relative;
+                            background-color: @softRed;
+
+                            border-radius: .35em;
+
+
+                            &:hover {
+                                background-color: #FF9B87;
+                            }
+                        }
+
+                        .current-day {
+                            background-color: @Cyan;
+
+                            &:hover {
+                                background-color: #B3E0E7;
+                            }
+                        }
+
+                        p {
+                            position: absolute;
+                            top: -50px;
+                            left: -15%;
+                            background-color: black;
+                            color: @white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 130%;
+                            border-radius: .5em;
+                            height: 41.2813px;
+                            opacity: 0;
+                            font-weight: 700;
+                            font-size: .9em;
+                        }
+
+                        &:hover {
+
+                            p {
+                                @media only screen and (min-width: @mobileMQ) {
+
+                                    opacity: 1;
+                                }
+
+                            }
+                        }
+                    }
+
+                    >p {
+                        padding-top: 6px;
+                        font-size: .8em;
+                        color: @mediumBrown;
+                    }
+                }
+
+                @media only screen and (min-width: @mobileMQ) {
+
+                    margin: 0 @desktopPadLR;
+                }
+            }
+
+            .spending {
+                max-width: @maxWidth;
+                width: 90%;
+                height: 422px;
+                border-radius: 1.5em;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                background-color: @white;
+
+                header {
+                    padding: @mobPadTB @mobPadLR 0px @mobPadLR;
+
+                    @media only screen and (min-width: @mobileMQ) {
+
+                        padding: @desktopPadTB @desktopPadLR 0px @desktopPadLR;
+                    }
+
+                    h2 {
+                        font-size: 1.5em;
+                        font-weight: 700;
+                    }
+                }
+
+                .summary {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 @mobPadLR @mobPadTB @mobPadLR;
+                    border-top: 2px solid @cream;
+                    padding-top: @mobPadTB;
+
+                    @media only screen and (min-width: @mobileMQ) {
+                        margin: 0 @desktopPadLR @desktopPadTB @desktopPadLR;
+                        padding-top: @desktopPadTB;
+                    }
+
+                    .total {
+                        h3 {
+                            color: @mediumBrown;
+                            padding-bottom: 6px;
+                        }
+
+                        p {
+                            font-weight: 700;
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                .increase {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+
+                    :first-child {
+                        font-weight: 700;
+                        padding-bottom: 3px;
+                    }
+
+                    :last-child {
+                        color: @mediumBrown;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.screen-reader-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
