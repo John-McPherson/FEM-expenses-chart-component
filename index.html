@@ -5,17 +5,59 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <title>Document</title>
+    <title>Expenses Chart Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='./assets/css/normalize.css'>
     <link rel='stylesheet' href='./assets/css/style.css'>
 </head>
 
 <body>
 
-    <!-- My balance
-    $921.48
+    <main>
+        <h1 class="screen-reader-only">Expenses Chart</h1>
+        <section aria-labelledby="balance-title" class="balance">
+            <header>
+                <h2 id="balance-title">My balance</h2>
+                <p>$921.48</p>
+            </header>
+            <div class="logo">
+                <img src="./assets/images/logo.svg" alt="">
+            </div>
+        </section>
+        <section aria-labelledby="spending-title" class="spending">
+            <header>
+                <h2 id="spending-title"> Spending - Last 7 days</h2>
+            </header>
+            <div class="graph" id="graph">
 
-    Spending - Last 7 days
+
+            </div>
+            <div class="summary">
+                <div class="total">
+                    <h3>
+                        Total this month
+                    </h3>
+                    <p>
+                        $478.33
+                    </p>
+                </div>
+                <div class="increase">
+                    <p>
+                        +2.4%
+                    </p>
+                    <p>
+                        from last month
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- My balance
+
+
+ 
 
     mon
     tue
@@ -25,11 +67,8 @@
     sat
     sun
 
-    Total this month
-    $478.33
 
-    +2.4%
-    from last month -->
+-->
 
     <script src='./assets/js/main.js'></script>
 </body>
